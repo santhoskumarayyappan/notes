@@ -1,0 +1,28 @@
+## arraycopy - copies content from an array to another which already initialized
+
+public static void arraycopy(Object src, int srcPos, Object dest, 
+                             int destPos, int length)
+                             
+int a[] = { 1, 8, 3 };
+ 
+// Creating an array b[] of same size as a[]
+int b[] = new int[a.length];
+
+// Copying elements of a[] to b[]
+System.arraycopy(a, 0, b, 0, 3);
+
+
+## copyOfRange - returns copy of original[from .. to)
+
+public static int[] copyOfRange(int[] original, int from, int to)
+
+// Custom input array
+int a[] = { 1, 8, 3, 5, 9, 10 };
+
+// Creating an array b[] and
+// copying elements of a[] to b[]
+int b[] = Arrays.copyOfRange(a, 2, 6);
+
+
+
+
