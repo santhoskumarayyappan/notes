@@ -21,6 +21,13 @@ int b[] = Arrays.copyOfRange(a, 2, 6);
  Map<String,String> gfg = new HashMap<String,String>();
  gfg.forEach((k,v) -> System.out.println("Key = "
         + k + ", Value = " + v));
+        
+      
+## IntStream.range - Traversing Array 
+
+int[] runs = IntStream.range(0, arr.length)
+                          .filter(i -> i == 0 || arr[i-1] > arr[i])
+                          .toArray();
 
 
 
