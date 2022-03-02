@@ -29,5 +29,9 @@ int[] runs = IntStream.range(0, arr.length)
                           .filter(i -> i == 0 || arr[i-1] > arr[i])
                           .toArray();
 
+## Java compare Large String Integer values "554", "8976" (descending)
 
+private int compare(String p1, String p2) {
+        return p1.length() == p2.length() ? p2.compareTo(p1) : Integer.compare(p2.length(), p1.length());
+    }
 
