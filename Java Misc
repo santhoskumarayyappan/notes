@@ -34,4 +34,17 @@ int[] runs = IntStream.range(0, arr.length)
 private int compare(String p1, String p2) {
         return p1.length() == p2.length() ? p2.compareTo(p1) : Integer.compare(p2.length(), p1.length());
     }
+    
+    
+## Java String traversal
+
+for (int i = 0; i < str.length(); i++) {
+    if (Character.isAlphabetic(str.charAt(i)) {
+          System.out.println(" is an alphabet.");
+          System.out.println(Character.toLowerCase(str.charAt(i));
+        }
+    if (Character.isLetterOrDigit(str.charAt(i)) {
+          System.out.println(" is an Letter/Digit.");
+        }  
+   }
 
