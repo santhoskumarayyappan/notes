@@ -1,4 +1,7 @@
+// Note that in this scheme, the pivot’s final location is not necessarily at the index that was returned,
+// and the next two segments that the main algorithm recurs on are (lo..p) and (p+1..hi) as opposed to (lo..p-1) and (p+1..hi) as in Lomuto’s scheme.
 
+    
 class Solution { 
     
     public void swap(int[] a, int i, int j) {
