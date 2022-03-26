@@ -54,5 +54,12 @@ for (int i = 0; i < str.length(); i++) {
 set1.retainAll(set2);
 
 
+## Pair
+javafx.util package;
+Pair<Integer, String> pair = new Pair<>(1, "One");
+Integer key = pair.getKey();
+String value = pair.getValue();
+
+
 
 
