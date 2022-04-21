@@ -60,6 +60,34 @@ Pair<Integer, String> pair = new Pair<>(1, "One");
 Integer key = pair.getKey();
 String value = pair.getValue();
 
+## LinkedHashMap LRU cache 
+## A special constructor is provided to create a linked hash map whose order of iteration is the order in which its entries were last accessed, 
+## from least-recently accessed to most-recently (access-order).
+
+## Constructs an empty LinkedHashMap instance with the specified initial capacity, load factor(0.75 default) and ordering mode (accessOrder - True, insertionOrder - False)
+## Same Key reinserting wont change insertionOrder
+LinkedHashMap(int initialCapacity, float loadFactor, boolean accessOrder)
+
+## Returns true if this map should remove its eldest entry.
+## This method is invoked by put and putAll after inserting a new entry into the map.
+protected boolean removeEldestEntry(Map.Entry eldest) {
+    return size() > MAX_ENTRIES;
+}
+
+
+## Deleting items while iterating
+## next() should be called everytime before remove() to remove current element or else exception thrown
+
+Iterator i = (anyCollection).iterator();
+while (iterator.hasNext()) {
+  iterator.next();
+  iterator.remove();
+}
+
+
+
+
+
 
 
 
