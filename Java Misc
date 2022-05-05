@@ -85,6 +85,11 @@ while (iterator.hasNext()) {
 }
 
 
+## merge(key, defaultValue, lambda) in Map
+public static void incrementPageVisit(Map<String, Integer> pageVisits, String page) {
+    pageVisits.merge(page, 1, (oldValue, value) ‑> oldValue + value); 
+}
+
 
 
 
