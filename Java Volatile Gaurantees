@@ -1,0 +1,31 @@
+https://jenkov.com/tutorials/java-concurrency/java-happens-before-guarantee.html
+
+
+## Java volatile Write Visibility Guarantee
+
+When you write to a Java volatile variable the value is guaranteed to be written directly to main memory.
+Additionally, all variables visible to the thread writing to the volatile variable will also get synchronized to main memory.
+
+this.nonVolatileVarA = 34;
+this.nonVolatileVarB = new String("Text");
+this.volatileVarC    = 300;
+
+
+## Java volatile Read Visibility Guarantee
+
+When you read the value of a Java volatile the value is guaranteed to be read directly from memory. 
+Furthermore, all the variables visible to the thread reading the volatile variable will also have their values refreshed from main memory.
+
+c = other.volatileVarC;
+b = other.nonVolatileB;
+a = other.nonVolatileA;
+
+
+## Happens Before Guarantee for Writes of volatile Variables
+
+A write to a non-volatile or volatile variable that happens before a write to a volatile variable is guaranteed to happen before the write to that volatile variable.
+
+## Happens Before Guarantee for Reads of volatile Variables
+
+A read of a volatile variable will happen before any subsequent reads of volatile and non-volatile variables.
+
