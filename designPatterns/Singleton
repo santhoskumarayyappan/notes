@@ -1,0 +1,58 @@
+## Double checked Locking
+public class Singleton implements Serializable, Cloneable { 
+  private static volatile Singleton _instance;
+  long serialVersionUID = -345676543L; // so that if any change in class will still allow serialized object to be compatible with loaded class
+
+  public static Singleton getInstance() {
+    if (_instance == null) { 
+      synchronized (Singleton.class) 
+        { 
+          if (_instance == null) 
+            { 
+            _instance = new Singleton();
+            }
+      } 
+    } 
+    return _instance; 
+  } 
+    
+  @Override
+  public Object clone() throws CloneNotSupportedException {
+      throw new CloneNotSupportedException();
+  }
+    
+  private Object readResolve() throws ObjectStreamException {
+      return singletonObject;
+  }
+}
+
+
+## Eager Initialization
+
+public class Singleton  {
+  private static Singleton singletonObject = new Singleton();
+  
+  // Adding a private constructor so that no one creates object with new operator
+  private Singleton() {
+  }
+
+  public static Singleton getInstance() {
+    return singletonObject;
+  }
+}
+
+## Holder 
+
+public static class Singleton {
+    private static class InstanceHolder {
+        public static Singleton instance = new Singleton();
+    }
+
+    private Singleton(){}
+
+    public static Singleton getInstance() { 
+        return InstanceHolder.instance;
+    }
+}
+
+
