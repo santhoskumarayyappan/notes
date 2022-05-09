@@ -91,6 +91,14 @@ public static void incrementPageVisit(Map<String, Integer> pageVisits, String pa
 }
 
 
+## ThreadMXBean
+ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
+long[] monitorDeadlockedThreads = threadMXBean.findMonitorDeadlockedThreads();
+ThreadInfo[] threadInfo = threadMXBean.getThreadInfo(monitorDeadlockedThreads);
+
+for (ThreadInfo info : threadInfo) {
+    System.out.println(info.toString());
+}
 
 
 
