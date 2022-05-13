@@ -100,6 +100,47 @@ for (ThreadInfo info : threadInfo) {
     System.out.println(info.toString());
 }
 
+## AutoBoxing Caches
+
+If the value p being boxed is true, false, 
+a byte, or a char in the range \u0000 to \u007f, or an int or short number between -128 and 127 (inclusive),
+then let r1 and r2 be the results of any two boxing conversions of p. It is always the case that r1 == r2.
+
+Integer b2=128;
+Integer b3=128;
+System.out.println(b2==b3); // false
+
+Integer b2=127;
+Integer b3=127;
+System.out.println(b2==b3); // true
+
+Integer b2 =Integer.valueOf(127)
+
+public static Integer valueOf(int i) {
+    if(i >= -128 && i <= IntegerCache.high)
+        return IntegerCache.cache[i + 128];
+    else
+        return new Integer(i);
+}
+
+
+## StringPool
+
+Thanks to the immutability of Strings in Java, the JVM can optimize the amount of memory allocated for them 
+by storing only one copy of each literal String in the pool. This process is called interning.
+
+String first = "Baeldung"; 
+String second = "Baeldung"; 
+System.out.println(first == second); // True
+
+String third = new String("Baeldung");
+String fourth = new String("Baeldung"); 
+System.out.println(third == fourth); // False
+
+String fifth = "Baeldung";
+String sixth = new String("Baeldung");
+System.out.println(fifth == sixth); // False
+
 
 
 
