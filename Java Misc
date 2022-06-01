@@ -141,11 +141,19 @@ String fifth = "Baeldung";
 String sixth = new String("Baeldung");
 System.out.println(fifth == sixth); // False
 
+
 ## Frequency Map using Streams
 
 Map<Integer, Long> counter = Arrays.stream(nums).boxed().collect(Collectors.groupingBy(e -> e, HashMap::new, Collectors.counting()));
-        
+   
+   
+## Java Modulus operator behaviour
 
+It ll consider only dividend(numerator) sign
+
+-11 %  5 == -1
+ 11 % -5 ==  1
+-11 % -5 == -1
 
 
 
