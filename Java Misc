@@ -155,6 +155,12 @@ It ll consider only dividend(numerator) sign
  11 % -5 ==  1
 -11 % -5 == -1
 
+## StringBuilder to charArray
+public void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)
+                  
+char[] charArray = new char[sb.length()];                  
+sb.getChars(0, sb.length(), charArray, 0);
+
 
 
 
