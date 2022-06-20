@@ -161,6 +161,15 @@ public void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)
 char[] charArray = new char[sb.length()];                  
 sb.getChars(0, sb.length(), charArray, 0);
 
+## Java substring
+public String substring(int startIndex)
+ [startIndex, this.length())
+ 
+public String substring(int startIndex, int endIndex) 
+ [startIndex, endIndex)
+
+
+
 
 
 
